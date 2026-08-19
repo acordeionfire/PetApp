@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PetApp</string>
+    <string name="nome_pet">Nome do pet:</string>
+    <string name="login">Login</string>
+    <string name="meu_nome">Manuelito</string>
+    <string name="campo_vazio">Campo vazio</string>
+</resources>
