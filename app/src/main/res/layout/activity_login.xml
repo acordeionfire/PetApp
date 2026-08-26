@@ -22,6 +22,7 @@
             android:layout_height="199dp"
             app:srcCompat="@mipmap/pet" />
 
+        <!-- Campo para entrada do usuário/e-mail -->
         <EditText
             android:id="@+id/campoEmail"
             android:layout_width="wrap_content"
@@ -29,29 +30,32 @@
             android:layout_gravity="center"
             android:ems="10"
             android:gravity="center"
+            android:hint="Usuário"
             android:inputType="textEmailAddress" />
 
-
+        <!-- Campo para entrada da senha (oculta os caracteres com asteriscos/pontos) -->
         <EditText
             android:id="@+id/campoSenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
+            android:gravity="center"
+            android:hint="Senha"
             android:inputType="textPassword" />
 
+        <!-- Botão que executa o método logar() através do android:onClick -->
         <Button
             android:id="@+id/buttonLogin"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="371dp"
             android:layout_height="50dp"
             android:layout_gravity="center|top"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="30dp"
             android:backgroundTintMode="add"
             android:onClick="logar"
             android:text="@string/login"
             app:strokeColor="#8BC34A" />
-
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
