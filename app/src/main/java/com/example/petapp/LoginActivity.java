@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.content.Intent;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         if (usuario.equals("admin") && senha.equals("123")) {
             // Se o usuário for "admin" E a senha for "123", exibe mensagem de sucesso
             Toast.makeText(this, "Sucesso no login", Toast.LENGTH_SHORT).show();
+            DadosCompartilhados.usuarioLogado = "admin";
             Intent intent = new Intent(this, DashboardActivity.class);
             startActivity(intent);
 
