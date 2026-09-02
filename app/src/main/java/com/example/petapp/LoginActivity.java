@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
+
         // 3. Procurando na lista
         Usuario usuarioEncontrado = null;
 
