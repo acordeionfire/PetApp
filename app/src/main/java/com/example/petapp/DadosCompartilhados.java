@@ -11,5 +11,6 @@ public class DadosCompartilhados {
     static {
         listaUsuario.add(new Usuario("admin", "123"));
         listaUsuario.add(new Usuario("aluno", "123"));
+        listaUsuario.add(new Usuario("nicolas", "asdf"));
     }
 }

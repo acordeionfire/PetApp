@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
         for (Usuario u : DadosCompartilhados.listaUsuario) {
             if (u.getUsuario().equals(usuarioDigitado) && u.getSenha().equals(senhaDigitada)) {
-                usuarioEncontrado = u; // guardamos a referência, não só um boolean
+                usuarioEncontrado = u;
                 break;
             }
         }
