@@ -18,11 +18,9 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         setTitle("Dashboard");
 
-        String
-
         Log.i("pet_dashboard", "usuario_logado" + DadosCompartilhados.usuarioLogado);
 
-        Toast.makeText(this, "Seja bem-vindo " + DadosCompartilhados.usuarioLogado,LENGTH_LONG).show();
+        Toast.makeText(this, "Seja bem-vindo " + DadosCompartilhados.usuarioLogado.getUsuario(), Toast.LENGTH_LONG).show();
 
     }
 }
