@@ -35,11 +35,20 @@ public class CadastroActivity extends AppCompatActivity {
         if (nomeDigitado.isEmpty() || idadeDigitado.isEmpty()) {
             Toast.makeText(this, "Todos os campos devem ser preenchidos", Toast.LENGTH_SHORT).show();
             return;
-        }else{
-            Toast.makeText(this, "Sucesso no cadastro", Toast.LENGTH_SHORT).show();
-            return;
         }
 
+        boolean salvou = DadosCompartilhados.salvarPet(nomeDigitado, idadeDigitado);
 
+        if (salvou) {
+            Toast.makeText(this, "Sucesso no cadastro", Toast.LENGTH_SHORT).show();
+
+            // Limpa os campos de texto após o sucesso
+            nomePet.setText("");
+            idadePet.setText("");
+        } else {
+            Toast.makeText(this, "Erro ao cadastrar o pet", Toast.LENGTH_SHORT).show();
+        }
     }
 }
+
+
