@@ -13,6 +13,19 @@ public class DadosCompartilhados {
         return listaPets.add(pet);
     }
 
+    public static boolean atualizarIdadePet (String nome, String novaIdade) {
+        for (Pet pet : listaPets) {
+            if (pet.nome.equalsIgnoreCase(nome)) {
+                pet.idade = novaIdade;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean removerPetPorNome (String nome) {
+        return listaPets.removeIf(pet -> pet.nome.equalsIgnoreCase(nome));
+    }
 
     static {
         listaUsuario.add(new Usuario("admin", "123"));

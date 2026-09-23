@@ -33,16 +33,16 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void listar(View view) {
-        Intent intent = new Intent(this, CadastroActivity.class);
+        Intent intent = new Intent(this, ListagemActivity.class);
         startActivity(intent);
     }
     public void remover(View view) {
-        Intent intent = new Intent(this, CadastroActivity.class);
+        Intent intent = new Intent(this, RemoverActivity.class);
         startActivity(intent);
     }
 
     public void atualizar(View view) {
-        Intent intent = new Intent(this, CadastroActivity.class);
+        Intent intent = new Intent(this, AtualizarActivity.class);
         startActivity(intent);
     }
 }

@@ -12,6 +12,7 @@ public class Pet {
         this.idade = idade;
 
     }
+    @Override
     public String toString() {
         return "Nome: " + nome + ", idade: " + idade;
     }

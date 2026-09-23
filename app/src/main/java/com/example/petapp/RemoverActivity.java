@@ -1,24 +1,40 @@
 package com.example.petapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class RemoverActivity extends AppCompatActivity {
+
+    private EditText campoNomePetRemover;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_remover);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        campoNomePetRemover = findViewById(R.id.campoNomePetRemover);
+    }
+
+    public void removerPet(View view) {
+        String nomeDigitado = campoNomePetRemover.getText().toString().trim();
+
+        if (nomeDigitado.isEmpty()) {
+            campoNomePetRemover.setError("Informe o nome do pet");
+            campoNomePetRemover.requestFocus();
+            return;
+        }
+
+        boolean removido = DadosCompartilhados.removerPetPorNome(nomeDigitado);
+
+        if (removido) {
+            Toast.makeText(this, "Pet removido com sucesso!", Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, "Pet não encontrado!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

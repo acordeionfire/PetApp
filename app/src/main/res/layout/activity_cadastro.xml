@@ -10,34 +10,38 @@
 
     <EditText
         android:id="@+id/campoNomePet"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="198dp"
-        android:ems="10"
+        android:layout_marginTop="180dp"
+        android:hint="Nome do Pet a ser cadastrado"
         android:inputType="text"
         android:tooltipText="Nome do Pet"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="40dp" />
+        tools:layout_editor_absoluteX="76dp" />
 
     <EditText
         android:id="@+id/campoIdadePet"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="268dp"
-        android:ems="10"
+        android:layout_marginTop="252dp"
+        android:hint="Idade do pet a ser cadastrado"
         android:inputType="text"
         android:tooltipText="Idade do Pet"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="40dp" />
+        tools:layout_editor_absoluteX="80dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="366dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="32dp"
         android:onClick="realizaCadastro"
         android:text="Cadastrar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:toggleCheckedStateOnClick="false"
-        tools:layout_editor_absoluteX="41dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/campoIdadePet" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
