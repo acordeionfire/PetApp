@@ -13,16 +13,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class CadastroActivity extends AppCompatActivity {
 
+    RepositorioPet repositorioPet;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_cadastro);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        repositorioPet = new RepositorioPet();
     }
 
     public void realizaCadastro(View view) {
@@ -36,6 +35,12 @@ public class CadastroActivity extends AppCompatActivity {
             Toast.makeText(this, "Todos os campos devem ser preenchidos", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        Pet pet = new Pet();
+        pet.idade = idadePet;
+        pet.nome = nomePet;
+        repositorioPet.salvar(pet);
+
 
         boolean salvou = DadosCompartilhados.salvarPet(nomeDigitado, idadeDigitado);
 
